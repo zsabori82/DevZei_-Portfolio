@@ -312,21 +312,64 @@ row-gap: 1rem;
   border-radius: 0.5rem;
 }
 
-/* ===== WORK =====*/
+/* ===== WORK SECTION ===== */
 .work__container {
-  row-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
+
 .work__img {
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  position: relative;
+  display: block;
   border-radius: 0.5rem;
   overflow: hidden;
+  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
 }
-.work__img img {
-  transition: 1s;
+
+/* Overlay container */
+.work__overlay {
+  position: relative;
+  overflow: hidden;
 }
-.work__img img:hover {
+
+/* Image Styling */
+.work__overlay img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Project Title Styling */
+.work__title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  color: #fff;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover Effect: Show Project Name */
+.work__overlay:hover .work__title {
+  opacity: 1;
+}
+
+/* Hover Effect: Slight Zoom */
+.work__overlay:hover img {
   transform: scale(1.1);
 }
+
+
+
 
 /* ===== CONTACT =====*/
 .contact__input {
